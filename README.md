@@ -191,10 +191,6 @@ After these steps, the basic setup is complete.
     2) Group manager assistant mode: disable "Workflow Orchestration", "Free Speaking", and "Mute Assistants" to enter this mode; the group manager assistant orchestrates message flow centrally.
     3) Workflow orchestration mode: tap the top-right corner in the group conversation page to enter workflow orchestration. It can be arranged manually by users or auto-arranged by TopoClaw. After setup, assistants in the group collaborate according to the workflow.
 
-<p align="center">
-  <img src="./imgs/Image_5_1.png" alt="Figure 5_1: Workflow orchestration" width="50%" height="50%" />
-</p>
-
 ### 🛠️ Self-Hosting & Developer Guide
 
 #### Developer Build / Run Commands
