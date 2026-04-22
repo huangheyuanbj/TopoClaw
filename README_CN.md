@@ -216,7 +216,7 @@ https://github.com/user-attachments/assets/7518751e-4731-405e-9157-7f0e4b35f930
 #### 开发者启动 / 编译命令示例
 
 以下命令用于本地开发联调，默认在仓库根目录 `TopoClaw/` 下执行。  
-说明：TopoClaw 与 GroupManager 已合入 TopoDesktop，常规桌面端使用无需单独部署这两个服务。
+说明：TopoClaw 与 GroupManager 在编译 TopoDesktop 时会被合入 TopoDesktop，常规桌面端使用无需单独部署这两个服务。
 
 ##### Step 1 — customer_service（通讯后端服务）
 

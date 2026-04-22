@@ -196,7 +196,7 @@ After these steps, the basic setup is complete.
 #### Developer Build / Run Commands
 
 The following commands are for local development. Execute from the repository root by default.  
-Note: TopoClaw and GroupManager are already integrated into TopoDesktop. For normal desktop usage, you do not need to deploy these two services separately.
+Note: TopoClaw and GroupManager are integrated into TopoDesktop during the TopoDesktop build process. For normal desktop usage, you do not need to deploy these two services separately.
 
 ##### Step 1 — customer_service (Communication Backend)
 
@@ -230,7 +230,7 @@ For more installation and packaging options, see `TopoDesktop/README.md`.
 
 #### Optional: Standalone Backend Debugging (Developers Only)
 
-The following is only for secondary development or backend troubleshooting. For normal usage, use TopoDesktop directly (TopoClaw and GroupManager are already embedded):
+The following is only for secondary development or backend troubleshooting. For normal usage, use TopoDesktop directly (TopoClaw and GroupManager are integrated during the TopoDesktop build process):
 
 - **TopoClaw (Core Agent Framework)**
 ```bash
