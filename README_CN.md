@@ -309,6 +309,20 @@ build-desktop-core-plus-browser.cmd
 2. **需要社交协作**：TopoDesktop + customer_service
 3. **需要跨设备执行**：TopoDesktop + TopoMobile + customer_service
 
+**Q: 为什么跨设备连不通？**
+
+**A:**
+请按以下顺序排查：
+1. 在 TopoClaw 会话页先点击输入框下方的**状态检测**按钮。
+2. 若检测失败，确认手机端和电脑端都已成功绑定 `customer_service`，并确认网络满足以下任一条件：
+   - `customer_service` 对手机和电脑均可公网访问（已做 IP 穿透/映射）；或
+   - `customer_service`、手机、电脑在同一局域网（同一 Wi-Fi）下。
+3. 检查 `customer_service/outputs/custom_assistants/custom_assistants.json`：
+   - 当前 IMEI 对应的 `topoclaw.baseUrl` 应为 `topoclaw://relay`；
+   - 对应的 `custom_topoclaw.baseUrl` 应为当前电脑端应用内置服务的可访问 IP 地址。
+4. 重启手机端应用、电脑端应用和 `customer_service` 服务后再次测试。
+5. 如仍失败，请随时联系我们并附上状态检测结果与关键日志，便于快速定位问题。
+
 **Q: 支持哪些平台？**
 
 **A:**
@@ -350,7 +364,8 @@ build-desktop-core-plus-browser.cmd
 ---
 
 <p align="center">
-  如需反馈建议，请在项目中提交 Issue 或联系维护团队。
+  欢迎随时提交 Issue 或与我们讨论你的想法。<br/>
+  我们会持续迭代并更新。
 </p>
 
 <p align="center">
