@@ -195,30 +195,10 @@ After these steps, the basic setup is complete.
 
 #### Developer Build / Run Commands
 
-The following commands are for local development. Execute from the repository root by default.
+The following commands are for local development. Execute from the repository root by default.  
+Note: TopoClaw and GroupManager are already integrated into TopoDesktop. For normal desktop usage, you do not need to deploy these two services separately.
 
-##### Step 1 — TopoClaw (Core Agent Framework)
-
-The core AI Agent engine handling dialogue understanding, task orchestration, tool orchestration, and multi-channel integration. All higher-level products depend on this framework.
-
-```bash
-cd TopoClaw
-pip install -e .
-topoclaw onboard
-topoclaw service --host 0.0.0.0 --port 18790
-```
-
-##### Step 2 — GroupManager (Group Management Assistant)
-
-A lightweight pure-LLM Q&A service for general chat and assistant management in group scenarios. Provides a streaming conversation interface via WebSocket.
-
-```bash
-cd GroupManager
-pip install -r requirements.txt
-python main.py --port 8320 --api-key sk-xxx
-```
-
-##### Step 3 — customer_service (Communication Backend)
+##### Step 1 — customer_service (Communication Backend)
 
 The conversation relay and state management service responsible for binding, message routing, friend/group relationships, and multi-device sync — the bridge between mobile and desktop.
 
@@ -230,13 +210,13 @@ python app.py
 uvicorn app:app --host 0.0.0.0 --port 8001
 ```
 
-##### Step 4 — TopoMobile (Android Client)
+##### Step 2 — TopoMobile (Android Client)
 
 The mobile application providing chat interaction, task-execution GUI, trajectory collection & replay, notification sensing, and more — the AI assistant's execution entry point on your phone.
 
 Open `TopoMobile/` in Android Studio, connect your phone, and Run (`Shift + F10`). See `TopoMobile/README.md` for details.
 
-##### Step 5 — TopoDesktop (Desktop, Windows CMD)
+##### Step 3 — TopoDesktop (Desktop, Windows CMD)
 
 The desktop client sharing chat history with the mobile side, supporting IMEI / QR-code binding. Ships with embedded TopoClaw and GroupManager backends, ready to use out of the box.
 
@@ -247,6 +227,25 @@ build-desktop-core-plus-browser.cmd
 
 This command runs the full desktop build pipeline in one shot (dependency install, built-in resource sync, embedded Python setup, browser-use install, and Electron packaging).
 For more installation and packaging options, see `TopoDesktop/README.md`.
+
+#### Optional: Standalone Backend Debugging (Developers Only)
+
+The following is only for secondary development or backend troubleshooting. For normal usage, use TopoDesktop directly (TopoClaw and GroupManager are already embedded):
+
+- **TopoClaw (Core Agent Framework)**
+```bash
+cd TopoClaw
+pip install -e .
+topoclaw onboard
+topoclaw service --host 0.0.0.0 --port 18790
+```
+
+- **GroupManager (Group Management Assistant)**
+```bash
+cd GroupManager
+pip install -r requirements.txt
+python main.py --port 8320 --api-key sk-xxx
+```
 
 #### Reference Documentation
 
@@ -284,10 +283,11 @@ For more installation and packaging options, see `TopoDesktop/README.md`.
 **Q: Do I have to deploy all modules?**
 
 **A:**
-Not all of them. TopoClaw (the core Agent framework) runs on your PC and serves as the "brain" of the entire system — it must be deployed. Combine the remaining modules as needed:
+No. Use different module combinations by scenario. TopoDesktop already embeds TopoClaw and GroupManager, so you do not need to deploy these two services separately for normal usage:
 1. **Desktop-only experience**: just TopoDesktop
 2. **Cross-user collaboration**: TopoDesktop + customer_service
 3. **Cross-device execution**: TopoDesktop + TopoMobile + customer_service
+If you are doing secondary development or standalone backend debugging, start TopoClaw / GroupManager manually.
 
 **Q: Which platforms are supported?**
 

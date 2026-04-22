@@ -215,30 +215,10 @@ https://github.com/user-attachments/assets/7518751e-4731-405e-9157-7f0e4b35f930
 
 #### 开发者启动 / 编译命令示例
 
-以下命令用于本地开发联调，默认在仓库根目录 `TopoClaw/` 下执行。
+以下命令用于本地开发联调，默认在仓库根目录 `TopoClaw/` 下执行。  
+说明：TopoClaw 与 GroupManager 已合入 TopoDesktop，常规桌面端使用无需单独部署这两个服务。
 
-##### Step 1 — TopoClaw（核心 Agent 框架）
-
-AI Agent 的核心引擎，负责对话理解、任务编排、工具调度与多渠道接入。所有上层产品均依赖此框架。
-
-```bash
-cd TopoClaw
-pip install -e .
-topoclaw onboard
-topoclaw service --host 0.0.0.0 --port 18790
-```
-
-##### Step 2 — GroupManager（群组管理助手）
-
-轻量级纯 LLM 问答服务，用于群组场景中的通用聊天与助手管理。通过 WebSocket 提供流式对话接口。
-
-```bash
-cd GroupManager
-pip install -r requirements.txt
-python main.py --port 8320 --api-key sk-xxx
-```
-
-##### Step 3 — customer_service（通讯后端服务）
+##### Step 1 — customer_service（通讯后端服务）
 
 会话中转与状态管理服务，负责绑定、消息路由、好友/群组关系、多端同步等，是手机端与电脑端通信的桥梁。
 
@@ -250,13 +230,13 @@ python app.py
 uvicorn app:app --host 0.0.0.0 --port 8001
 ```
 
-##### Step 4 — TopoMobile（Android 客户端）
+##### Step 2 — TopoMobile（Android 客户端）
 
 移动端应用，提供聊天交互、任务执行 GUI、轨迹采集与回放、通知感知等能力，是 AI 助手在手机上的执行入口。
 
 推荐使用 Android Studio 打开 `TopoMobile/`，连接手机后直接 Run（`Shift + F10`）。详细步骤见 `TopoMobile/README.md`。
 
-##### Step 5 — TopoDesktop（桌面端，Windows CMD）
+##### Step 3 — TopoDesktop（桌面端，Windows CMD）
 
 桌面客户端，与手机端共享聊天记录，支持 IMEI / 扫码绑定。内嵌 TopoClaw 与 GroupManager 后端，开箱即用。
 
@@ -267,6 +247,25 @@ build-desktop-core-plus-browser.cmd
 
 该命令会一键执行桌面端完整打包流程（安装依赖、同步内置资源、配置内嵌 Python、安装 browser-use、执行 Electron 打包）。
 更多安装与打包方式可参考 `TopoDesktop/README.md`。
+
+#### 可选：服务侧独立调试（仅开发者）
+
+以下内容仅用于二次开发或服务侧问题定位；常规使用请直接通过 TopoDesktop（已内嵌）：
+
+- **TopoClaw（核心 Agent 框架）**
+```bash
+cd TopoClaw
+pip install -e .
+topoclaw onboard
+topoclaw service --host 0.0.0.0 --port 18790
+```
+
+- **GroupManager（群组管理助手）**
+```bash
+cd GroupManager
+pip install -r requirements.txt
+python main.py --port 8320 --api-key sk-xxx
+```
 
 #### 参考文档
 
@@ -304,10 +303,11 @@ build-desktop-core-plus-browser.cmd
 **Q: 必须同时部署所有模块吗？**
 
 **A:**
-不需要。TopoClaw（核心 Agent 框架）运行在电脑上，是整个系统的"大脑"，必须部署。其余模块按需组合：
+不需要。常规使用按场景组合即可；TopoDesktop 已内嵌 TopoClaw 与 GroupManager，无需单独部署这两个服务。常见组合：
 1. **只需桌面端体验**：仅 TopoDesktop 即可
 2. **需要社交协作**：TopoDesktop + customer_service
 3. **需要跨设备执行**：TopoDesktop + TopoMobile + customer_service
+如需二次开发或独立调试服务，再手动启动 TopoClaw / GroupManager。
 
 **Q: 支持哪些平台？**
 
