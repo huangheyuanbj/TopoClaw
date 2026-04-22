@@ -303,7 +303,7 @@ python main.py --port 8320 --api-key sk-xxx
 **Q: 必须同时部署所有模块吗？**
 
 **A:**
-不需要。常规使用按场景组合即可；TopoDesktop 已内嵌 TopoClaw 与 GroupManager，无需单独部署这两个服务。常见组合：
+不需要。TopoClaw（核心 Agent 框架）运行在电脑上，是整个系统的"大脑"，必须部署。其余模块按需组合：
 1. **只需桌面端体验**：仅 TopoDesktop 即可
 2. **需要社交协作**：TopoDesktop + customer_service
 3. **需要跨设备执行**：TopoDesktop + TopoMobile + customer_service

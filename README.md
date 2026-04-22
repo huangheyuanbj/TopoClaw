@@ -283,7 +283,7 @@ python main.py --port 8320 --api-key sk-xxx
 **Q: Do I have to deploy all modules?**
 
 **A:**
-No. Use different module combinations by scenario. TopoDesktop already embeds TopoClaw and GroupManager, so you do not need to deploy these two services separately for normal usage:
+Not all of them. TopoClaw (the core Agent framework) runs on your PC and serves as the "brain" of the entire system — it must be deployed. Combine the remaining modules as needed:
 1. **Desktop-only experience**: just TopoDesktop
 2. **Cross-user collaboration**: TopoDesktop + customer_service
 3. **Cross-device execution**: TopoDesktop + TopoMobile + customer_service
