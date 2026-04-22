@@ -168,7 +168,7 @@ Your assistant can execute code on your computer, control your phone's UI, and c
    - `Chat`: for general tasks
    - `GUI`: for desktop/mobile GUI tasks (multimodal model)
 
-![Figure 4_1: Model selection](./imgs/Image_4_1.png)
+<img src="./imgs/Image_4_1.png" alt="Figure 4_1: Model selection" width="50%" height="50%" />
 
 After these steps, the basic setup is complete.
 
