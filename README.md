@@ -289,20 +289,6 @@ Not all of them. TopoClaw (the core Agent framework) runs on your PC and serves 
 2. **Cross-user collaboration**: TopoDesktop + customer_service
 3. **Cross-device execution**: TopoDesktop + TopoMobile + customer_service
 
-**Q: Why can't my cross-device connection be established?**
-
-**A:**
-Please troubleshoot in this order:
-1. In the TopoClaw chat page, click the **Status Check** button below the input box first.
-2. If it fails, confirm both mobile and desktop apps are bound to `customer_service`, and make sure either network condition is met:
-   - `customer_service` is reachable by both phone and PC from public network (IP tunneling / port mapping configured); or
-   - `customer_service`, phone, and PC are in the same LAN (same Wi-Fi).
-3. Check `customer_service/outputs/custom_assistants/custom_assistants.json`:
-   - `topoclaw.baseUrl` for the current IMEI should be `topoclaw://relay`;
-   - corresponding `custom_topoclaw.baseUrl` should be the reachable IP address of the desktop app's built-in service.
-4. Restart the mobile app, desktop app, and `customer_service`, then test again.
-5. If the issue persists, contact us anytime and include the Status Check result plus key logs for faster diagnosis.
-
 **Q: Which platforms are supported?**
 
 **A:**
@@ -322,6 +308,20 @@ For more security mechanisms, see the [Security](#-security) section.
 
 **A:**
 Any model service compatible with the OpenAI API protocol (e.g., OpenRouter, DashScope, Azure OpenAI), plus OAuth login for OpenAI Codex and GitHub Copilot. See `TopoClaw/README.md` for configuration details.
+
+**Q: Why can't my cross-device connection be established?**
+
+**A:**
+Please troubleshoot in this order:
+1. In the TopoClaw chat page, click the **Status Check** button below the input box first.
+2. If it fails, confirm both mobile and desktop apps are bound to `customer_service`, and make sure either network condition is met:
+   - `customer_service` is reachable by both phone and PC from public network (IP tunneling / port mapping configured); or
+   - `customer_service`, phone, and PC are in the same LAN (same Wi-Fi).
+3. Check `customer_service/outputs/custom_assistants/custom_assistants.json`:
+   - `topoclaw.baseUrl` for the current IMEI should be `topoclaw://relay`;
+   - corresponding `custom_topoclaw.baseUrl` should be the reachable IP address of the desktop app's built-in service.
+4. Restart the mobile app, desktop app, and `customer_service`, then test again.
+5. If the issue persists, contact us anytime and include the Status Check result plus key logs for faster diagnosis.
 
 ---
 
