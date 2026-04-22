@@ -198,18 +198,17 @@ uvicorn app:app --host 0.0.0.0 --port 8001
 
 推荐使用 Android Studio 打开 `TopoMobile/`，连接手机后直接 Run（`Shift + F10`）。详细步骤见 `TopoMobile/README.md`。
 
-##### Step 5 — TopoDesktop（桌面端，Windows PowerShell）
+##### Step 5 — TopoDesktop（桌面端，Windows CMD）
 
 桌面客户端，与手机端共享聊天记录，支持 IMEI / 扫码绑定。内嵌 TopoClaw 与 GroupManager 后端，开箱即用。
 
-```powershell
+```cmd
 cd TopoDesktop
-npm install
-npm run setup:assistant        # 内嵌 TopoClaw
-npm run setup:group-manager    # 内嵌 GroupManager
-npm run setup:python
-npm run build:win:zip
+build-desktop-core-plus-browser.cmd
 ```
+
+该命令会一键执行桌面端完整打包流程（安装依赖、同步内置资源、配置内嵌 Python、安装 browser-use、执行 Electron 打包）。
+更多安装与打包方式可参考 `TopoDesktop/README.md`。
 
 #### 参考文档
 

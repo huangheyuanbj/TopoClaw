@@ -198,18 +198,17 @@ The mobile application providing chat interaction, task-execution GUI, trajector
 
 Open `TopoMobile/` in Android Studio, connect your phone, and Run (`Shift + F10`). See `TopoMobile/README.md` for details.
 
-##### Step 5 — TopoDesktop (Desktop, Windows PowerShell)
+##### Step 5 — TopoDesktop (Desktop, Windows CMD)
 
 The desktop client sharing chat history with the mobile side, supporting IMEI / QR-code binding. Ships with embedded TopoClaw and GroupManager backends, ready to use out of the box.
 
-```powershell
+```cmd
 cd TopoDesktop
-npm install
-npm run setup:assistant        # embed TopoClaw
-npm run setup:group-manager    # embed GroupManager
-npm run setup:python
-npm run build:win:zip
+build-desktop-core-plus-browser.cmd
 ```
+
+This command runs the full desktop build pipeline in one shot (dependency install, built-in resource sync, embedded Python setup, browser-use install, and Electron packaging).
+For more installation and packaging options, see `TopoDesktop/README.md`.
 
 #### Reference Documentation
 

@@ -10,7 +10,7 @@ A desktop chat client that syncs with the mobile app. Supports binding via IMEI 
 
 ## Development
 
-All commands run in **Windows PowerShell** (path: `TopoDesktop/`).
+Daily development commands can run in **Windows PowerShell**; desktop packaging is recommended in **Windows CMD** (path: `TopoDesktop/`).
 
 ```powershell
 npm install
@@ -46,25 +46,32 @@ Web-only development (no Electron, no embedded Python):
 npm run dev
 ```
 
-## Packaging
+## Packaging (Windows CMD, choose one)
 
-```powershell
-npm run electron:build
+### Path A: one-click script (recommended)
+
+```cmd
+build-desktop-core-plus-browser.cmd
 ```
 
-The equivalent pipeline (matching `build` in `package.json`) runs sequentially:
+### Path B: manual step-by-step (equivalent to the script)
 
-1. `setup:assistant` — sync TopoClaw
-2. `setup:group-manager` — sync group-manager
-3. `setup:python` — embed Python + install both backend dependencies
-4. `round-icon` — icon processing
-5. `tsc -p tsconfig.electron.json` — compile the Electron main process
-6. `vite build` — build the renderer
-7. `electron-builder` — produce the installer
+```cmd
+npm install
+npm run setup:assistant
+npm run setup:group-manager
+npm run setup:python:core
+cd resources\TopoClaw
+..\python-embed\python.exe -m pip install browser-use==0.12.0 --no-deps --prefer-binary
+cd ..\..
+npm run round-icon
+npm run licenses:generate
+npx tsc -p tsconfig.electron.json
+npx vite build
+npx electron-builder --config electron-builder.config.cjs
+```
 
 Output goes to the `release/` directory.
-
-Portable builds and similar scripts that differ only in `electron-builder` flags (e.g. `build:portable`) also include `setup:assistant`, `setup:group-manager`, and `setup:python`.
 
 ## Icons
 

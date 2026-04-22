@@ -10,7 +10,7 @@
 
 ## 开发
 
-在 **Windows PowerShell** 下操作（路径：`TopoDesktop/`）。
+日常开发命令可在 **Windows PowerShell** 下执行；桌面打包建议在 **Windows CMD** 下执行（路径：`TopoDesktop/`）。
 
 ```powershell
 npm install
@@ -46,25 +46,32 @@ npm run electron:dev
 npm run dev
 ```
 
-## 打包
+## 打包（Windows CMD，二选一）
 
-```powershell
-npm run electron:build
+### 路径 A：一键脚本（推荐）
+
+```cmd
+build-desktop-core-plus-browser.cmd
 ```
 
-等价流程（与 `package.json` 中 `build` 一致）会顺序执行：
+### 路径 B：手动分步（与脚本等价）
 
-1. `setup:assistant` — 同步 TopoClaw  
-2. `setup:group-manager` — 同步 group-manager  
-3. `setup:python` — 内嵌 Python + 安装两套后端依赖  
-4. `round-icon` — 图标处理  
-5. `tsc -p tsconfig.electron.json` — 编译 Electron 主进程  
-6. `vite build` — 渲染进程构建  
-7. `electron-builder` — 打安装包  
+```cmd
+npm install
+npm run setup:assistant
+npm run setup:group-manager
+npm run setup:python:core
+cd resources\TopoClaw
+..\python-embed\python.exe -m pip install browser-use==0.12.0 --no-deps --prefer-binary
+cd ..\..
+npm run round-icon
+npm run licenses:generate
+npx tsc -p tsconfig.electron.json
+npx vite build
+npx electron-builder --config electron-builder.config.cjs
+```
 
 产物在 `release/` 目录。
-
-便携版等与 `build` 同类、仅 electron-builder 参数不同的脚本（如 `build:portable`）同样包含 `setup:assistant`、`setup:group-manager`、`setup:python`。
 
 ## 图标
 
