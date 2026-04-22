@@ -169,7 +169,9 @@ https://github.com/user-attachments/assets/7518751e-4731-405e-9157-7f0e4b35f930
    - `GUI`：面向电脑端/手机端 GUI 任务（多模态大模型）  
    配置完成后，返回与 TopoClaw 的会话，即可在下图所示位置选择模型。  
 
-<img src="./imgs/Image_4_1.png" alt="图 4_1：模型选择" width="50%" height="50%" />
+<p align="center">
+  <img src="./imgs/Image_4_1.png" alt="图 4_1：模型选择" width="50%" height="50%" />
+</p>
 
 至此，基础配置完成。
 
@@ -190,7 +192,9 @@ https://github.com/user-attachments/assets/7518751e-4731-405e-9157-7f0e4b35f930
     2) 群组管理助手模式：取消勾选“工作流编排”“自由发言”“助手禁言”后进入；由群组管理助手统一编排消息流程。群组管理助手可由用户指定，或由 TopoClaw 自动设置。  
     3) 工作流编排模式：点击群组会话页右上角进入工作流编排；可由用户手动编排，或由 TopoClaw 代为编排。完成后，群内助手将按工作流协同执行。
 
-    <img src="./imgs/Image_5_1.png" alt="图 5_1：工作流编排" width="50%" height="50%" />
+    <p align="center">
+      <img src="./imgs/Image_5_1.png" alt="图 5_1：工作流编排" width="50%" height="50%" />
+    </p>
 
 #### 主动能力
 
