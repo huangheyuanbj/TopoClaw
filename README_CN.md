@@ -56,7 +56,7 @@ https://github.com/user-attachments/assets/1b1e3eaf-ae8a-4783-b381-94c61fb26e8f
 https://github.com/user-attachments/assets/d52cb686-db52-430d-9132-8272c3e0b98b
 
 ### ▶️ 主动感知
-> 收到如下微信消息并作出反应："小to：到你的手机日历上，订个日程，今天晚上7点，和同学聚餐，然后订一个六点半的闹钟提醒。上面的任务完成之后记得回微信来告诉我你订好了"
+> "我去睡觉去了，如果jack来约我时间，告诉他我明天早上九点到深圳，到了深圳有个会，明天下午五点到六点有空"
 
 https://github.com/user-attachments/assets/1ab4f1de-3fdc-4fea-ac03-39fbc73d374f
 

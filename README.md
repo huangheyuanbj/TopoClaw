@@ -56,7 +56,7 @@ https://github.com/user-attachments/assets/1b1e3eaf-ae8a-4783-b381-94c61fb26e8f
 https://github.com/user-attachments/assets/d52cb686-db52-430d-9132-8272c3e0b98b
 
 ### ▶️ Proactive
-> Receives a WeChat message and reacts: "Add an event to my phone calendar — dinner with classmates tonight at 7 PM, and set an alarm for 6:30 PM. Once done, reply on WeChat to confirm."
+> "I'm going to sleep. If Jack asks to schedule with me, tell him I'll arrive in Shenzhen at 9:00 AM tomorrow. I have a meeting after I arrive, and I'm available from 5:00 PM to 6:00 PM tomorrow."
 
 https://github.com/user-attachments/assets/1ab4f1de-3fdc-4fea-ac03-39fbc73d374f
 
