@@ -1,0 +1,301 @@
+<h1 align="center">TopoClaw：你的 AI 数字助手 —— 能动手、会协作、懂主动</h1>
+
+<p align="center">
+  <a href="#-topoclaw-是什么">简介</a> •
+  <a href="#-核心能力">核心能力</a> •
+  <a href="#-安全">安全</a> •
+  <a href="#-快速开始">快速开始</a> •
+  <a href="#️-roadmap">Roadmap</a> •
+  <a href="#-常见问题">FAQ</a>
+</p>
+
+<p align="center">
+  <a href="./README.md">English</a> | <a href="./README_CN.md"><strong>中文</strong></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/平台-Windows%20%7C%20Android-blue" alt="Platform" />
+  <img src="https://img.shields.io/badge/python-3.12%2B-brightgreen" alt="Python" />
+  <img src="https://img.shields.io/badge/license-Apache%202.0-blue" alt="License" />
+</p>
+
+---
+
+## 💡 TopoClaw 是什么？
+
+TopoClaw 是你的 **AI 数字助手**。它不只是一个聊天助手——而是一个能替你**操作电脑和手机、代你与他人沟通协作、在你不在时主动盯着事情推进**的助手，并在每次交互中持续学习你的偏好，越来越像你。
+
+本仓库将**手机端 `TopoMobile`** 与**电脑端 `TopoDesktop`** 等产品组合在一起，你可以直接使用默认助手，也可以创建自己的助手与技能，在多端、多人场景里完成复杂任务。
+
+你的助手具备以下核心能力：
+
+- **🖥️📱 跨设备执行**：手机与电脑组成统一执行面，任务可拆解、并行、链式跨端执行，上一步输出自动流入下一步
+- **👥 社交协作**：TopoClaw 拥有可分享的社交身份，可被邀请进群参与协商办事，亦能自动组建多用户多助手群组协作解决问题；可帮你自动过滤并回复群组与好友消息，关键决策仍由你掌控
+- **⚡ 主动感知推进**：能感知手机通知、检测日程冲突、主动汇报关键结论，不用你反复追问
+- **🔒 安全兜底**：三级文件权限 + 操作空间隔离 + 命令审计，能力强但不失控
+- **🧩 开放可扩展**：技能社区 + 助手广场 + 多渠道接入，能力可复用、可分享、可定制
+
+---
+
+## 📢 News
+
+- **[2026 年 4 月 21 日]** TopoClaw 正式开源，发布核心 Agent 框架、桌面端、手机端与通讯后端服务
+
+---
+
+## 🎬 Demo
+
+### ▶️ 跨设备执行
+> "我电脑上有一个叫劳务合同的pdf，你帮我找一找里面甲方的姓名和电话，然后发条短信问他什么时候有时间"
+
+https://github.com/user-attachments/assets/1b1e3eaf-ae8a-4783-b381-94c61fb26e8f
+
+### ▶️ 社交协作
+> "帮我创个群，叫'内部小聚群'，拉好友小B进来，然后问他最近有没有时间一起共进晚餐。"
+
+https://github.com/user-attachments/assets/d52cb686-db52-430d-9132-8272c3e0b98b
+
+### ▶️ 主动感知
+> 收到如下微信消息并作出反应："小to：到你的手机日历上，订个日程，今天晚上7点，和同学聚餐，然后订一个六点半的闹钟提醒。上面的任务完成之后记得回微信来告诉我你订好了"
+
+https://github.com/user-attachments/assets/7518751e-4731-405e-9157-7f0e4b35f930
+
+> 🎥 Demo 视频的加速、裁剪、配音均由 TopoClaw 自身完成。
+
+---
+
+## 🏆 能力对比
+
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2"></th>
+      <th colspan="5" align="center">跨设备执行</th>
+      <th colspan="2" align="center">社交协作</th>
+      <th colspan="1" align="center">主动感知</th>
+    </tr>
+    <tr>
+      <th>Mobile-use GUI</th>
+      <th>手机侧 DeepLink</th>
+      <th>电脑侧执行<br/>(Code &amp; Function Calling)</th>
+      <th>Computer-use GUI</th>
+      <th>跨设备复杂编排</th>
+      <th>数字助手</th>
+      <th>多用户多智能体<br/>协作执行</th>
+      <th>外界感知</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>OpenClaw</strong></td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td></tr>
+    <tr><td><strong>TopoClaw</strong></td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+  </tbody>
+</table>
+
+---
+
+## ✨ 核心能力
+
+数字助手要像你一样办事，需要三项关键能力：**跨设备执行**、**社交协作**、**主动感知推进**。
+
+### 🖥️📱 跨设备执行
+
+你用电脑也用手机，助手也得两端都能操作。同一账号下手机与电脑组成**统一执行面**，会话与结果跨端延续。
+
+- **电脑手机都能操作**：按场景调用电脑侧能力（Shell / Browser-use GUI / Computer-use GUI 等）与手机侧能力（Mobile-use GUI / DeepLink 等）
+- **任务编排跨端跑**：支持任务编排、并行子任务与链式执行——上一步输出自动流入下一步，不受设备限制
+- **结果自动汇总**：PC 文件系统作为数据中枢，手机结果无缝回传
+
+### 👥 社交协作
+
+你需要和别人打交道，助手也得能建群、协商、办事。群组与助手广场等场景下，多用户、多助手通过管理员组织、自由发言、工作流编排等多种协作形式，把现实里需要多人配合的流程搬进同一套协作空间。
+
+- **最懂你的 AI 秘书**：持续学习你的偏好与习惯，能代表你建群、协商、办事，像你本人一样处理日常事务
+- **分寸拿捏得住**：分级处理——日常咨询直接回复 → 日程协调自动筛选方案 → 关键决策必须授权 → 敏感事项转交本人
+- **建群到办完一条龙**：支持自动建群、协商→执行无缝衔接、执行后主动汇报，群内角色各司其职、流程自然流转
+
+### ⚡ 主动感知推进
+
+你不在的时候，助手得自己盯着，有事主动处理或提醒你。在规则与安全边界内**主动感知**任务进展与外界变化，推进后续步骤。
+
+- **重要消息不漏掉**：过滤手机重要通知，与记忆上下文交叉比对（如检测日程冲突）
+- **有结论主动说**：关键结论不等你问、需要决策时暂停并附上下文、异常情况及时预警
+- **少问你几遍**：与长期记忆、定时与渠道通知等能力配合，减少「逐项追问」式的往返
+
+> 具体能力以产品版本与配置为准。
+
+### 🧩 配套能力
+
+| 能力 | 说明 |
+|---|---|
+| **技能闭环与社区** | 从社区检索安装技能，或让助手按需生成并保存；加入"我的技能"后可在合适场景自动调用 |
+| **群组协作** | 创建群组并邀请好友与不同助手加入，支持任务分工、联合执行与按需 @ 指定助手 |
+| **助手广场** | 创建、管理并分享自己的助手，也可通过助手 ID 添加他人的助手能力 |
+| **记忆增强** | 持续学习偏好与常用流程，减少重复说明 |
+| **多渠道接入** | 可接入多种 IM 等渠道，复用同一套助手能力 |
+
+---
+
+## 🔒 安全
+
+助手能在电脑上执行代码、在手机上操控界面、代你社交沟通——能力越大，潜在风险也越大。为此我们设计了严格的安全架构，在充分释放助手能力的同时，确保每一层都有安全兜底：
+
+| 层级 | 机制 |
+|---|---|
+| **三级权限体系** | 文件系统权限精细化管控，支持禁止 / 只读 / 可编辑三级配置，实现最小权限原则 |
+| **操作空间隔离** | 可配置允许的操作空间范围；越界操作自动弹出用户确认，超时默认拒绝 |
+| **命令执行审计** | 所有 exec 命令实时检查，自动拦截文件移动、删除等危险操作，防止智能体通过通用工具绕开防护 |
+
+---
+
+## 🚀 快速开始
+
+### 一键安装
+
+> 🚧 一键安装包即将发布，敬请期待。
+
+### 🛠️ 自部署与开发者入口
+
+#### 开发者启动 / 编译命令示例
+
+以下命令用于本地开发联调，默认在仓库根目录 `TopoClaw/` 下执行。
+
+##### Step 1 — TopoClaw（核心 Agent 框架）
+
+AI Agent 的核心引擎，负责对话理解、任务编排、工具调度与多渠道接入。所有上层产品均依赖此框架。
+
+```bash
+cd TopoClaw
+pip install -e .
+topoclaw onboard
+topoclaw service --host 0.0.0.0 --port 18790
+```
+
+##### Step 2 — GroupManager（群组管理助手）
+
+轻量级纯 LLM 问答服务，用于群组场景中的通用聊天与助手管理。通过 WebSocket 提供流式对话接口。
+
+```bash
+cd GroupManager
+pip install -r requirements.txt
+python main.py --port 8320 --api-key sk-xxx
+```
+
+##### Step 3 — customer_service（通讯后端服务）
+
+会话中转与状态管理服务，负责绑定、消息路由、好友/群组关系、多端同步等，是手机端与电脑端通信的桥梁。
+
+```bash
+cd customer_service
+pip install -r requirements.txt
+python app.py
+# 或使用 uvicorn
+uvicorn app:app --host 0.0.0.0 --port 8001
+```
+
+##### Step 4 — TopoMobile（Android 客户端）
+
+移动端应用，提供聊天交互、任务执行 GUI、轨迹采集与回放、通知感知等能力，是 AI 助手在手机上的执行入口。
+
+推荐使用 Android Studio 打开 `TopoMobile/`，连接手机后直接 Run（`Shift + F10`）。详细步骤见 `TopoMobile/README.md`。
+
+##### Step 5 — TopoDesktop（桌面端，Windows PowerShell）
+
+桌面客户端，与手机端共享聊天记录，支持 IMEI / 扫码绑定。内嵌 TopoClaw 与 GroupManager 后端，开箱即用。
+
+```powershell
+cd TopoDesktop
+npm install
+npm run setup:assistant        # 内嵌 TopoClaw
+npm run setup:group-manager    # 内嵌 GroupManager
+npm run setup:python
+npm run build:win:zip
+```
+
+#### 参考文档
+
+| 模块 | 说明 | 文档 |
+|---|---|---|
+| **TopoClaw** | 核心 Agent 框架 | `TopoClaw/README.md` |
+| **GroupManager** | 群组管理助手 | `GroupManager/README.md` |
+| **customer_service** | 通讯后端服务 | `customer_service/README.md` |
+| **TopoMobile** | Android 客户端 | `TopoMobile/README.md` |
+| **TopoDesktop** | 桌面客户端 | `TopoDesktop/README.md` |
+
+---
+
+## 🗺️ Roadmap
+
+### ✅ 已发布
+
+- **跨设备执行**：手机与电脑统一执行面，支持任务编排、并行子任务与链式跨端执行
+- **社交协作**：数字助手 + 群组协作 + 助手广场，支持自动建群与分级行为协议
+- **主动感知推进**：通知监听与智能研判、主动汇报、异常预警
+- **技能系统**：技能创建、社区安装、自动调用闭环
+- **安全架构**：三级文件权限、操作空间隔离、命令执行审计
+
+### 📋 计划中
+
+- 工作流灵活性增强
+- 多异构设备管理
+- 更多平台支持（macOS / Linux 桌面端、iOS 移动端）
+- 团队协作与权限管理增强
+
+---
+
+## ❓ 常见问题
+
+**Q: 必须同时部署所有模块吗？**
+
+**A:**
+不需要。TopoClaw（核心 Agent 框架）运行在电脑上，是整个系统的"大脑"，必须部署。其余模块按需组合：
+1. **只需桌面端体验**：仅 TopoDesktop 即可
+2. **需要社交协作**：TopoDesktop + customer_service
+3. **需要跨设备执行**：TopoDesktop + TopoMobile + customer_service
+
+**Q: 支持哪些平台？**
+
+**A:**
+目前桌面端仅支持 Windows，手机端仅支持 Android。macOS / Linux 桌面端及 iOS 移动端支持已在 Roadmap 中，敬请期待。
+
+**Q: 数据存在哪里？安全吗？**
+
+**A:**
+使用本地内置环境时，核心数据优先在本地处理；安全架构从数据流转到操作权限逐层保障：
+1. 跨设备执行、社交协作等场景的部分数据会通过通讯后端服务（customer_service）中转，该服务可由用户自行部署
+2. 其余数据均在本地存储与处理
+3. 对于非工作区的文件删除、写入等操作，系统会弹出确认提示，需用户明确许可后才会执行
+
+更多安全机制详见[安全](#-安全)板块。
+
+**Q: TopoClaw 支持哪些大模型？**
+
+**A:**
+支持所有兼容 OpenAI API 协议的模型服务（如 OpenRouter、DashScope、Azure OpenAI 等），也支持 OAuth 登录 OpenAI Codex 和 GitHub Copilot。具体配置见 `TopoClaw/README.md`。
+
+---
+
+## 🤝 参与贡献
+
+欢迎贡献！
+
+1. Fork 本仓库
+2. 创建特性分支（`git checkout -b feature/amazing-feature`）
+3. 提交更改（`git commit -m 'Add amazing feature'`）
+4. 推送分支（`git push origin feature/amazing-feature`）
+5. 发起 Pull Request
+
+---
+
+## 📄 许可证
+
+本项目基于 Apache License 2.0 开源 — 详见 [LICENSE](LICENSE) 文件。
+
+---
+
+<p align="center">
+  如需反馈建议，请在项目中提交 Issue 或联系维护团队。
+</p>
+
+<p align="center">
+  <strong>TopoClaw 🐈 — 你的 AI 数字助手，能动手、会协作、懂主动，越用越像你。</strong>
+</p>
