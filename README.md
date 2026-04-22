@@ -180,6 +180,21 @@ After these steps, the basic setup is complete.
 - **Overlay permission**: After granting, enable "Allow overlay during tasks" and "Companion mode" (enabled by default). A floating ball appears on the desktop; tap it to launch tasks.
 - **Device and app notification permissions**: Required for notification monitoring.
 
+#### Core Capabilities
+
+- **Cross-device execution**: After binding both phone and desktop, click "Status Check" below the TopoClaw chat input box. Once the check passes, you can start cross-device tasks.
+  Note: GUI-related tasks may require manual permission authorization on mobile.
+- **Cross-user execution**
+  - **Digital twin**: In a private chat with a desktop-side friend, tap the top-right menu to enable "Digital Twin". Once enabled, TopoClaw can auto-handle and reply to friend messages, and ask for your intervention when needed.
+  - **Group workflow**: Groups can include multiple users and assistants, created by either users or TopoClaw. Three orchestration modes are supported in the group profile:
+    1) Free speaking mode: all users and assistants can speak freely based on context.
+    2) Group manager assistant mode: disable "Workflow Orchestration", "Free Speaking", and "Mute Assistants" to enter this mode; the group manager assistant orchestrates message flow centrally.
+    3) Workflow orchestration mode: tap the top-right corner in the group conversation page to enter workflow orchestration. It can be arranged manually by users or auto-arranged by TopoClaw. After setup, assistants in the group collaborate according to the workflow.
+
+<p align="center">
+  <img src="./imgs/Image_5_1.png" alt="Figure 5_1: Workflow orchestration" width="50%" height="50%" />
+</p>
+
 ### 🛠️ Self-Hosting & Developer Guide
 
 #### Developer Build / Run Commands
