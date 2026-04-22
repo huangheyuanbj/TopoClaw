@@ -151,7 +151,7 @@ Your assistant can execute code on your computer, control your phone's UI, and c
 
 ### One-Click Install
 
-- Third-party package (Release, non-official): <https://github.com/huanggangyyd/topoclaw-thirdparty-builds/releases/tag/v2.1.0-thirdparty.1>
+- Community-provided installation package: <https://github.com/huanggangyyd/topoclaw-thirdparty-builds/releases/tag/v2.1.0-thirdparty.1>
 
 #### Basic Setup
 

@@ -151,7 +151,7 @@ https://github.com/user-attachments/assets/7518751e-4731-405e-9157-7f0e4b35f930
 
 ### 一键安装
 
-- 第三方安装包（Release，非官方）：<https://github.com/huanggangyyd/topoclaw-thirdparty-builds/releases/tag/v2.1.0-thirdparty.1>
+- 来自社区的安装包：<https://github.com/huanggangyyd/topoclaw-thirdparty-builds/releases/tag/v2.1.0-thirdparty.1>
 
 #### 基础配置
 
