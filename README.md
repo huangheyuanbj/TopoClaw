@@ -1,4 +1,4 @@
-<h1 align="center">TopoClaw: Your AI Digital Assistant — Agentic, Collaborative, Proactive</h1>
+<h1 align="center">TopoClaw: Your AI Digital Assistant — Hands-on, Collaborative, Proactive</h1>
 
 <p align="center">
   <a href="#-what-is-topoclaw">About</a> •
@@ -95,7 +95,7 @@ https://github.com/user-attachments/assets/1ab4f1de-3fdc-4fea-ac03-39fbc73d374f
 
 ## ✨ Core Capabilities
 
-To truly represent you, your digital assistant needs three key abilities: **agentic execution across devices**, **communicate & collaborate on your behalf**, and **Proactively Sense & Drive**.
+To truly represent you, your digital assistant needs three key abilities: **hands-on execution across devices**, **communicate & collaborate on your behalf**, and **Proactively Sense & Drive**.
 
 ### 🖥️📱 Cross-Device Execution
 
@@ -349,5 +349,5 @@ This project is licensed under the Apache License 2.0 — see the [LICENSE](LICE
 </p>
 
 <p align="center">
-  <strong>TopoClaw 🐈 — Your AI digital assistant: agentic, collaborative, proactive. The more you use it, the more it becomes you.</strong>
+  <strong>TopoClaw 🐈 — Your AI digital assistant: hands-on, collaborative, proactive. The more you use it, the more it becomes you.</strong>
 </p>
