@@ -39,7 +39,7 @@ Your assistant has these core capabilities:
 
 ## 📢 News
 
-- **[21 Apr 2026]** TopoClaw is now open source — core Agent framework, desktop client, mobile client, and communication backend released
+- **[22 Apr 2026]** TopoClaw is now open source — core Agent framework, desktop client, mobile client, and communication backend released
 
 ---
 
