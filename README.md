@@ -1,4 +1,4 @@
-<h1 align="center">TopoClaw: Your AI Digital Assistant — Hands-on, Collaborative, Proactive</h1>
+<h1 align="center">TopoClaw: Your AI Digital Assistant — Agentic, Collaborative, Proactive</h1>
 
 <p align="center">
   <a href="#-what-is-topoclaw">About</a> •
@@ -31,7 +31,7 @@ Your assistant has these core capabilities:
 
 - **🖥️📱 Cross-Device Execution**: Phone and computer form a unified execution surface — tasks can be decomposed, parallelized, and chained across devices, with outputs flowing automatically between steps
 - **👥 Social Collaboration**: TopoClaw has a shareable social identity, can be invited into group chats to negotiate and get things done, can auto-create multi-user multi-assistant groups for collaborative problem-solving, and can help filter and reply to group and friend messages for you — while key decisions remain in your control
-- **⚡ Proactively sense & drive**: Senses phone notifications, detects schedule conflicts, and proactively reports key conclusions — no need for you to keep asking
+- **⚡ Proactively Sense & Drive**: Senses phone notifications, detects schedule conflicts, and proactively reports key conclusions — no need for you to keep asking
 - **🔒 Security by design**: Three-tier file permissions + workspace isolation + command auditing — powerful but never out of control
 - **🧩 Open and extensible**: Skill community + assistant marketplace + multi-channel access — capabilities are reusable, shareable, and customizable
 
@@ -60,7 +60,7 @@ https://github.com/user-attachments/assets/d52cb686-db52-430d-9132-8272c3e0b98b
 
 https://github.com/user-attachments/assets/1ab4f1de-3fdc-4fea-ac03-39fbc73d374f
 
-> 🎥 The acceleration, trimming, and voiceover of the demo video were all done by TopoClaw itself.
+> 🎥 All demo videos above were accelerated, trimmed, and voiced over by TopoClaw itself.
 
 ---
 
@@ -95,7 +95,7 @@ https://github.com/user-attachments/assets/1ab4f1de-3fdc-4fea-ac03-39fbc73d374f
 
 ## ✨ Core Capabilities
 
-To act like you, your digital assistant needs three key abilities: **hands-on across devices**, **socialize & collaborate for you**, and **proactively sense & drive**.
+To truly represent you, your digital assistant needs three key abilities: **agentic execution across devices**, **communicate & collaborate on your behalf**, and **Proactively Sense & Drive**.
 
 ### 🖥️📱 Cross-Device Execution
 
@@ -110,7 +110,7 @@ You use both your computer and phone — so does your assistant. Under the same 
 You need to deal with other people — so does your assistant. It can create groups, negotiate, and get things done on your behalf. In group and assistant marketplace scenarios, multiple users and assistants collaborate through admin-organized coordination, free-form discussion, and workflow orchestration, bringing real-world multi-person workflows into a unified space.
 
 - **Your smartest AI secretary**: Continuously learns your preferences and habits, represents you to create groups, negotiate, and get things done — handles daily affairs as if it were you
-- **Knows where to draw the line**: Tiered handling — routine inquiries → auto-filtered scheduling → authorization required for key decisions → sensitive matters handed off to you
+- **Tiered Autonomy**: Tiered handling — routine inquiries → auto-filtered scheduling → authorization required for key decisions → sensitive matters handed off to you
 - **From group creation to getting it done**: Supports auto group creation, seamless negotiation → execution, and proactive post-execution reporting — each role plays its part, workflows unfold naturally
 
 ### ⚡ Proactively Sense & Drive
@@ -177,7 +177,7 @@ After these steps, the basic setup is complete.
 #### Additional Important Mobile Permissions
 
 - **Accessibility and screenshot permissions**: Required for mobile GUI action simulation. You can grant them only when such tasks are actually needed.
-- **Overlay permission**: After granting, enable "Allow overlay during tasks" and "Companion mode" (enabled by default). A floating ball appears on the desktop; tap it to launch tasks.
+- **Overlay permission**: After granting, enable "Allow overlay during tasks" and "Companion mode" (enabled by default, keeps the assistant ready in the foreground with a floating control for quick task handoff). A floating ball appears on the desktop; tap it to launch tasks.
 - **Device and app notification permissions**: Required for notification monitoring.
 
 #### Core Capabilities
@@ -264,8 +264,8 @@ python main.py --port 8320 --api-key sk-xxx
 ### ✅ Released
 
 - **Cross-Device Execution**: Unified execution surface across phone and PC — task orchestration, parallel sub-tasks, and chained cross-device execution
-- **Socialize & collaborate for you**: Digital assistant + group collaboration + assistant marketplace, with auto group creation and tiered behavior protocol
-- **Proactively sense & drive**: Notification monitoring & smart judgment, proactive reporting, anomaly alerts
+- **Social Collaboration**: Digital assistant + group collaboration + assistant marketplace, with auto group creation and tiered behavior protocol
+- **Proactively Sense & Drive**: Notification monitoring & smart judgment, proactive reporting, anomaly alerts
 - **Skill system**: Skill creation, community installation, and auto-invocation loop
 - **Security architecture**: Three-tier file permissions, workspace isolation, command execution auditing
 
@@ -283,7 +283,7 @@ python main.py --port 8320 --api-key sk-xxx
 **Q: Do I have to deploy all modules?**
 
 **A:**
-Not all of them. TopoClaw (the core Agent framework) runs on your PC and serves as the "brain" of the entire system — it must be deployed. Combine the remaining modules as needed:
+Not all of them. For normal usage, TopoClaw and GroupManager are bundled inside TopoDesktop, so you do not need to deploy TopoClaw separately. Add modules as needed:
 1. **Desktop-only experience**: just TopoDesktop
 2. **Cross-user collaboration**: TopoDesktop + customer_service
 3. **Cross-device execution**: TopoDesktop + TopoMobile + customer_service
@@ -349,5 +349,5 @@ This project is licensed under the Apache License 2.0 — see the [LICENSE](LICE
 </p>
 
 <p align="center">
-  <strong>TopoClaw 🐈 — Your AI digital assistant: hands-on, collaborative, proactive. The more you use it, the more it becomes you.</strong>
+  <strong>TopoClaw 🐈 — Your AI digital assistant: agentic, collaborative, proactive. The more you use it, the more it becomes you.</strong>
 </p>
