@@ -154,6 +154,29 @@ Your assistant can execute code on your computer, control your phone's UI, and c
 - Third-party install notes (Issue, non-official): `<replace with issue link>`
 - Third-party package (Release, non-official): <https://github.com/huanggangyyd/topoclaw-thirdparty-builds/releases/tag/v2.1.0-thirdparty.1>
 
+#### Basic Setup
+
+1. **Download and install**
+   Download the mobile APK and desktop EXE, then complete installation on Android and Windows respectively.
+2. **Deploy the relay service**
+   Deploy `customer_service` from this repository for cross-device and cross-user message relay. After deployment, configure the service address in both apps:
+   - Mobile app path: `Me -> Services -> scroll to the bottom and fill in "Manual Customer Service / Cross-device / Friend Chat Address"`
+   - Desktop app path: `Enter any digits in IMEI input -> click Bind -> after the app opens, click Settings at the bottom-left -> fill in "Cross-device / Friend Chat Service Address"`
+3. **Bind devices**
+   Return to the desktop login page, tap Scan on the mobile app (top-right), then scan the desktop QR code to connect.
+4. **Configure models**
+   In TopoDesktop, open Assistant Plaza and edit TopoClaw model settings. There are two model categories:
+   - `Chat`: for general tasks
+   - `GUI`: for desktop/mobile GUI tasks (multimodal model)
+
+After these steps, the basic setup is complete.
+
+#### Additional Important Mobile Permissions
+
+- **Accessibility and screenshot permissions**: Required for mobile GUI action simulation. You can grant them only when such tasks are actually needed.
+- **Overlay permission**: After granting, enable "Allow overlay during tasks" and "Companion mode" (enabled by default). A floating ball appears on the desktop; tap it to launch tasks.
+- **Device and app notification permissions**: Required for notification monitoring.
+
 ### 🛠️ Self-Hosting & Developer Guide
 
 #### Developer Build / Run Commands
