@@ -10442,7 +10442,7 @@ topoclaw-desktop 2.1.0 - MIT
 
 ## 开发
 
-在 **Windows PowerShell** 下操作（路径：`TopoDesktop/`）。
+日常开发命令可在 **Windows PowerShell** 下执行；桌面打包建议在 **Windows CMD** 下执行（路径：`TopoDesktop/`）。
 
 ```powershell
 npm install
@@ -10456,23 +10456,13 @@ npm install
 |------|------|
 | `npm run setup:assistant` | 将仓库内 `TopoClaw/topoclaw`（兼容旧 `nanobot`）同步到 `resources/TopoClaw` |
 | `npm run setup:group-manager` | 将仓库根目录 `GroupManager/` 同步到 `resources/group-manager`（SimpleChat，非 nanobot） |
-| `npm run setup:python:core` | 仅安装 TopoClaw 核心依赖（不安装 browser-use） |
-| `npm run setup:python:strict` | 安装核心依赖 + `browser-use` 严格模式（默认推荐） |
-| `npm run setup:python:compat` | 安装核心依赖 + `browser-use` 兼容模式（版本更宽松） |
+| `npm run setup:python` | 下载/校验内嵌 Python，并 `pip install` TopoClaw 与 group-manager 的依赖 |
 
-一键执行上述三步（推荐，默认 strict）：
+一键执行上述三步（推荐）：
 
 ```powershell
 npm run setup:builtin
 ```
-
-`setup:python` 支持环境变量 `TOPOCLAW_BROWSER_MODE=strict|compat|off`。常规情况下可直接使用上面的 npm 脚本，无需手动设置。
-
-约束文件：
-
-- `scripts/topoclaw-core-constraints.txt`：核心依赖锁定
-- `scripts/topoclaw-browser-strict-constraints.txt`：browser strict 依赖锁定
-- `scripts/topoclaw-browser-compat-constraints.txt`：browser compat 依赖约束
 
 ### 启动开发环境
 
@@ -10488,25 +10478,32 @@ npm run electron:dev
 npm run dev
 ```
 
-## 打包
+## 打包（Windows CMD，二选一）
 
-```powershell
-npm run electron:build
+### 路径 A：一键脚本（推荐）
+
+```cmd
+build-desktop-core-plus-browser.cmd
 ```
 
-等价流程（与 `package.json` 中 `build` 一致）会顺序执行：
+### 路径 B：手动分步（与脚本等价）
 
-1. `setup:assistant` — 同步 TopoClaw  
-2. `setup:group-manager` — 同步 group-manager  
-3. `setup:python:strict` — 内嵌 Python + 安装两套后端依赖（含 browser-use strict）  
-4. `round-icon` — 图标处理  
-5. `tsc -p tsconfig.electron.json` — 编译 Electron 主进程  
-6. `vite build` — 渲染进程构建  
-7. `electron-builder` — 打安装包  
+```cmd
+npm install
+npm run setup:assistant
+npm run setup:group-manager
+npm run setup:python:core
+cd resources\TopoClaw
+..\python-embed\python.exe -m pip install browser-use==0.12.0 --no-deps --prefer-binary
+cd ..\..
+npm run round-icon
+npm run licenses:generate
+npx tsc -p tsconfig.electron.json
+npx vite build
+npx electron-builder --config electron-builder.config.cjs
+```
 
 产物在 `release/` 目录。
-
-便携版等与 `build` 同类、仅 electron-builder 参数不同的脚本（如 `build:portable`）同样包含 `setup:assistant`、`setup:group-manager`、`setup:python:strict`。
 
 ## 图标
 
@@ -10545,7 +10542,7 @@ python main.py --port 8320 --api-key sk-xxx
 
 用于存放 Windows Python Embeddable Package，支持桌面端执行能力。
 
-- 推荐执行 `npm run setup:python:strict` 自动下载/校验/安装依赖
+- 推荐直接执行 `npm run setup:python` 自动下载/校验/安装依赖
 - 打包时会将该目录复制进安装包 `resources`
 - 手动安装时需确保目录下存在 `python.exe`、`python3xx._pth`、`Lib/` 等核心文件
 

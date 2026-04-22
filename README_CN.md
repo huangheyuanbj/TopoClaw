@@ -58,7 +58,7 @@ https://github.com/user-attachments/assets/d52cb686-db52-430d-9132-8272c3e0b98b
 ### ▶️ 主动感知
 > 收到如下微信消息并作出反应："小to：到你的手机日历上，订个日程，今天晚上7点，和同学聚餐，然后订一个六点半的闹钟提醒。上面的任务完成之后记得回微信来告诉我你订好了"
 
-https://github.com/user-attachments/assets/7518751e-4731-405e-9157-7f0e4b35f930
+https://github.com/user-attachments/assets/1ab4f1de-3fdc-4fea-ac03-39fbc73d374f
 
 > 🎥 Demo 视频的加速、裁剪、配音均由 TopoClaw 自身完成。
 

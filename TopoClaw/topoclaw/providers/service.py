@@ -367,7 +367,7 @@ class ProviderService:
         patch: dict[str, Any],
         *,
         mobile_agent: Any | None,
-        computer_agent: Any | None,
+        computer_agent: Any | None = None,
     ) -> dict[str, Any]:
         unknown = set(patch) - _PATCH_KEYS
         if unknown:
@@ -409,6 +409,7 @@ class ProviderService:
 
             targets: list[tuple[str, Any | None]] = [
                 ("mobile", mobile_agent),
+                ("computer", computer_agent),
             ]
             updated_targets: list[str] = []
             errors: list[dict[str, str]] = []
@@ -459,6 +460,7 @@ class ProviderService:
         msg: dict[str, Any],
         *,
         mobile_agent: Any | None,
+        computer_agent: Any | None = None,
     ) -> dict[str, Any]:
         merged = _merge_set_llm_provider_message(msg)
         patch = _build_optional_patch_from_set_llm_payload(merged)
